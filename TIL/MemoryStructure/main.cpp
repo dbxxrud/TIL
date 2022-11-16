@@ -26,13 +26,34 @@ C++에서 사용하는 메모리 영역
 프로그램 종료시에 메모리가 제거된다.
 */
 
-int g_Number = 100;
+int g_Number = 100; // 전역변수
 
+// 결과값을 return 해주는 함수 형태를 call by value 라고 한다.
 int Sum(int Number1, int Number2)
 {
 	g_Number = 500;
+	
+	static int Number3 = 100;
+	std::cout << Number3 << std::endl;
+	++Number3;
+
 	return Number1 + Number2;
 }
+
+// 결과값을 레퍼런스를 이용해서 전달해주는 형태를
+// call by reference 라고 한다.
+void Damage(int& HP, int Attack)
+{
+	HP -= Attack;
+}
+
+// 결과값을 주소를 이용해서 접근하여 전달해주는 형태를
+// call by address 라고 한다.
+void DamagePointer(int* pHP, int Attack)
+{
+	*pHP -= Attack;
+}
+
 int main()
 {
 	int Number1 = 100, Number2 = 200;
