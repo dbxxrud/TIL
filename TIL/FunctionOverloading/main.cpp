@@ -24,6 +24,21 @@ int Sum(int Number1, int Number2)
 	return Number1 + Number2;
 }
 
+/*
+아래 함수는 문제가 될 수 있다.
+오버로딩된 함수인데 위의 함수도 int타입 인자 2개를 넣어주며
+아래의 함수는 int 타입 인자 3개를 넣어서 호출도 가능하고 
+int 타입 인자 2개를 넣어서 호출도 가능하다.
+그래서 Sum 함수를 호출할때 인자를 2개를 넣고 호출하게 되면 컴파일러는
+위의 함수인지 아래의 함수인지를 판단을 할 수 없게 된다.
+그래서 에러가 발생하게 된다.
+*/
+
+//int Sum(int Number1, int Number2, int Number3 = 300)
+//{
+//	return Number1 + Number2 + Number3;
+//}
+
 float Sum(float Number1, float Number2)
 {
 	return Number1 + Number2;
